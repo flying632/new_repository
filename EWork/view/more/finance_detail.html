@@ -1,0 +1,167 @@
+<!doctype html>
+<html>
+
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+		<meta name="viewport" content="width=device-width,initial-scale=1,minimum-scale=1,maximum-scale=1,user-scalable=no" />
+		<link href="../../css/mui.min.css" rel="stylesheet" />
+		<style type="text/css">
+			.mui-bar .mui-icon span{
+				font-size: 18px;
+			}
+			.mui-bar .mui-title{
+				font-size: 20px;
+			} 
+			.mui-table-view{
+				margin-top: 1px;
+			}
+			.mui-table-view-cell .name{
+				padding-top: 5px;
+				margin-left: 15px;
+				font-weight: bold;
+				font-size: 18px;
+				float: left;
+			}
+			.mui-table-view-cell .name .date{
+				margin-left: 10px;
+				color: #CCCCCC;
+				font-size: 14px;
+			}
+			.mui-btn{
+				margin-top: 20px;
+				font-size: 12px;
+				padding: 8px;
+			}
+			.container{
+				margin-top: 20px;
+				padding: 10px;
+				background-color: white;
+			}
+			.detail{
+				padding-left: 10px;
+				height: 35px;
+			}
+			.key{
+				width: 30%;
+				float: left;
+			}
+			.key span{
+				color:#007AFF;
+			}
+			.detail span{
+				font-family: "微软雅黑";
+				font-size: 18px;
+				
+			}
+			.value{
+				float: left;
+			}
+			.reply{
+				clear: both;
+				margin-top: 20px;
+			}
+			.reply img{
+				float: left;
+				width: 30px;
+				height: 30px;
+			}
+			.reply span{
+				margin-left: 10px;
+				line-height: 30px;
+				font-family: "微软雅黑";
+				font-size: 16px;
+			}
+			.category{
+				margin-left: 5px;
+				margin-top: 25px;
+				font-size: 14px;
+				color: red;
+				font-weight: lighter;
+			}
+			.mui-input-row{
+				padding: 5px;
+			}
+		</style>
+	</head>
+
+	<body>
+		
+		<header class="mui-bar mui-bar-nav">
+			<span class="mui-icon mui-action-back mui-icon-arrowleft mui-icon-back mui-badge-primary mui-badge-inverted"><span>返回</span></span>
+			<h1 class="mui-title mui-badge-primary mui-badge-inverted">财务详情</h1>
+		</header>
+		
+		<div class="mui-content">
+			<ul class="mui-table-view">
+				<li class="mui-table-view-cell">
+					<img class="mui-pull-left" src="../../images/Assets.xcassets/AppIcon.appiconset/logo_80.png" />
+					<div class="mui-pull-left name">刘国奇 
+						<span class="date">4月23日</span>
+					</div>
+					<button type="button" class="mui-btn mui-btn-outlined mui-btn-primary mui-pull-right">未回复</button>
+				</li>
+			</ul>
+			
+			<div class="container">
+				<div class="detail">
+					<div class="key"><span>报销金额</span></div>
+					<div class="value"><span>7</span></div>
+				</div>
+				
+				<div class="detail">
+					<div class="key"><span>票据张数</span></div>
+					<div class="value"><span>1</span></div>
+				</div>
+				
+				<div class="detail">
+					<div class="key"><span>报销类型</span></div>
+					<div class="value"><span>餐饮费</span></div>
+				</div>
+				
+				<div class="detail">
+					<div class="key"><span>审批人员</span></div>
+					<div class="value"><span>订立</span></div>
+				</div>
+				
+				<div class="detail">
+					<div class="key" style="letter-spacing: 30px;"><span>时间</span></div>
+					<div class="value"><span>1月1日</span></div>
+				</div>
+				
+				<div class="detail">
+					<div class="key" style="letter-spacing: 30px;"><span>备注</span></div>
+					<div class="value"><span>还是</span></div>
+				</div>
+			</div>
+			
+			<ul class="mui-table-view reply">
+				<li class="mui-table-view-cell">
+						<img class="mui-icon" src="../../images/Assets.xcassets/comment.imageset/comment@2x.png" /><span>1条回复</span>
+				</li>
+			</ul>
+			
+			<ul class="mui-table-view">
+				<li class="mui-table-view-cell">
+					<img class="mui-pull-left" src="../../images/Assets.xcassets/AppIcon.appiconset/logo_80.png" />
+					<div class="mui-pull-left name">刘国奇 
+						<span class="date">2017-01-01 00:23:17</span>
+						<div class="category">餐饮费</div>
+					</div>
+					
+					<button type="button" class="mui-btn mui-btn-outlined mui-btn-primary mui-pull-right">通过</button>
+				</li>
+			</ul>
+			
+			<div class="mui-input-row">
+				<input type="text" placeholder="收到任务给个回复吧~" />
+			</div>
+			
+		</div>
+		<script src="../../js/mui.min.js"></script>
+		<script type="text/javascript">
+			mui.init();
+		</script>
+	</body>
+
+</html>

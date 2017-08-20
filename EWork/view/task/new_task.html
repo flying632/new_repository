@@ -1,0 +1,90 @@
+<!doctype html>
+<html>
+
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+		<meta name="viewport" content="width=device-width,initial-scale=1,minimum-scale=1,maximum-scale=1,user-scalable=no" />
+		<link href="../../css/mui.min.css" rel="stylesheet" />
+		<style type="text/css">
+			header h1{
+				font-family: "微软雅黑";
+			}
+			.task textarea{
+				height: 100px;
+			}
+			.publish{
+				font-size: 18px;
+				color: #ACACB4;
+			}
+			.add{ 
+				width: 100px;
+				height: 100px;
+			}
+			.mui-table-view{
+				margin-top: 20px;
+			}
+			.mui-table-view-cell{
+				padding: 15px;
+			}
+			.mui-table-view-cell .mui-navigate-right{
+				font-size: 20px; 
+			}
+			.mui-table-view-cell .mui-navigate-right span{
+				font-size: 18px;
+				font-weight: lighter;
+				margin-right: 20px;
+			}
+		</style>
+	</head>
+
+	<body>
+		<header class="mui-bar mui-bar-nav">
+			<button class="mui-btn mui-action-back mui-btn-link mui-btn-nav mui-pull-left">
+				<span class="mui-icon mui-icon-left-nav"></span>
+				返回
+			</button>
+			<button class="mui-btn mui-btn-primary mui-btn-nav mui-btn-link mui-pull-right">
+				<span class="mui-icon mui-icon-checkmarkempty"></span>
+			</button>
+			<h1 class="mui-title" style="color: #007AFF;">新建任务</h1>
+		</header>
+		
+		<div class="mui-content">
+			 <div class="task">
+			 	<textarea placeholder="要发布什么任务呢？"></textarea>
+			 </div>
+					
+					 
+			<img class="add" src="../../images/Assets.xcassets/+.imageset/+@2x.png" />
+				 
+		 
+			
+			<ul class="mui-table-view">
+				<li class="mui-table-view-cell">
+					<a class="mui-navigate-right">
+						接收人
+						<span class="mui-pull-right">无</span>
+					</a>
+				</li>
+				<li class="mui-table-view-cell">
+					<a class="mui-navigate-right">
+						截止时间
+						<span class="mui-pull-right">未选择</span>
+					</a>
+				</li>
+				<li class="mui-table-view-cell">
+					<a class="mui-navigate-right">
+						任务类型
+						<span class="mui-pull-right">普通任务</span>
+					</a>
+				</li>
+			</ul>
+		</div>
+		<script src="../../js/mui.min.js"></script>
+		<script type="text/javascript">
+			mui.init()
+		</script>
+	</body>
+
+</html>

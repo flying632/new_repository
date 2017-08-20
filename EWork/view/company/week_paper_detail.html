@@ -1,0 +1,130 @@
+<!doctype html>
+<html>
+
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+		<meta name="viewport" content="width=device-width,initial-scale=1,minimum-scale=1,maximum-scale=1,user-scalable=no" />
+		<link href="../../css/mui.min.css" rel="stylesheet" />
+		<style type="text/css">
+			.mui-bar .mui-icon span{
+				font-size: 18px;
+			}
+			.mui-bar .mui-title{
+				font-size: 20px;
+			} 
+			.mui-table-view-cell .name{
+				padding-top: 25px;
+				margin-left: 15px;
+				font-weight: bold;
+				font-size: 20px;
+				float: left;
+			}
+			.mui-table-view-cell .name .date{
+				margin-left: 10px;
+				color: #CCCCCC;
+				font-size: 14px;
+			}
+			.mui-table-view-cell img{
+				width: 80px;
+				height: 80px;
+			}
+			.mui-btn{
+				margin-top: 20px;
+				font-size: 12px;
+				padding: 8px;
+			}
+			.container{
+				padding: 10px;
+				background-color: white;
+			}
+			.detail{
+				padding-left: 10px;
+				height: 35px;
+			}
+			.key{
+				width: 30%;
+				float: left;
+			}
+			.key span{
+				color:#007AFF;
+			}
+			.detail span{
+				font-family: "微软雅黑";
+				font-size: 18px;
+				
+			}
+			.value{
+				float: left;
+			}
+			.reply{
+				clear: both;
+				margin-top: 20px;
+			}
+			.reply img{
+				float: left;
+				width: 30px;
+				height: 30px;
+			}
+			.reply span{
+				margin-left: 10px;
+				line-height: 30px;
+				font-family: "微软雅黑";
+				font-size: 16px;
+			}
+		</style>
+	</head>
+
+	<body>
+		
+		<header class="mui-bar mui-bar-nav">
+			<span class="mui-icon mui-action-back mui-icon-back mui-badge-primary mui-badge-inverted"><span>返回</span></span>
+			<h1 class="mui-title mui-badge-primary mui-badge-inverted">周报详情</h1>
+		</header>
+		
+		<div class="mui-content">
+			<ul class="mui-table-view">
+				<li class="mui-table-view-cell">
+					<img class="mui-pull-left" src="../../images/Assets.xcassets/AppIcon.appiconset/logo_80.png" />
+					<div class="mui-pull-left name">刘国奇 
+						<span class="date">4月23日</span>
+					</div>
+				</li>
+			</ul>
+			
+			<div class="container">
+				<div class="detail">
+					<div class="key"><span>已完成</span></div>
+					<div class="value"><span>册书</span></div>
+				</div>
+				
+				<div class="detail">
+					<div class="key"><span>未完成</span></div>
+					<div class="value"><span>京津冀</span></div>
+				</div>
+				
+				<div class="detail">
+					<div class="key"><span>需协调</span></div>
+					<div class="value"><span>暂无</span></div>
+				</div>
+				
+				<div class="detail">
+					<div class="key" style="letter-spacing: 30px;"><span>备注</span></div>
+					<div class="value"><span>暂无</span></div>
+				</div>
+				
+			</div>
+			
+			<ul class="mui-table-view reply">
+				<li class="mui-table-view-cell">
+						<img class="mui-icon" src="../../images/Assets.xcassets/comment.imageset/comment@2x.png" /><span>暂无回复</span>
+				</li>
+			</ul>
+		</div>
+		<script src="../../js/mui.min.js"></script>
+		<script type="text/javascript">
+			mui.init()
+		</script>
+	</body>
+
+</html>

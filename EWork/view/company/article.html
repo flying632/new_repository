@@ -1,0 +1,53 @@
+<!doctype html>
+<html>
+
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+		<meta name="viewport" content="width=device-width,initial-scale=1,minimum-scale=1,maximum-scale=1,user-scalable=no" />
+		<link href="../../css/mui.min.css" rel="stylesheet" />
+		<style>
+			.mui-bar .mui-icon span {
+				font-size: 18px;
+			}
+			
+			.mui-title {
+				color: #007AFF;
+			}
+		</style>
+
+	</head>
+
+	<body>
+		<header class="mui-bar mui-bar-nav">
+			<div class="mui-icon mui-action-back mui-icon-arrowleft mui-icon-back mui-badge-primary mui-badge-inverted"><span>返回</span></div>
+			<h1 class="mui-title">公司文章</h1>
+		</header>
+		<div class="mui-content">
+
+		</div>
+
+		<script src="../../js/mui.min.js"></script>
+		<script type="text/javascript">
+			var article_url = localStorage.getItem('url');
+		 
+
+			mui.init({  
+				subpages: [{
+					url: article_url,
+					id: 'artical.html',
+					styles: {
+						top: '45px',
+						bottom: '0px',
+					}
+				}]
+			})
+
+			mui.plusReady(function() {
+				
+				
+			});
+		</script>
+	</body>
+
+</html>

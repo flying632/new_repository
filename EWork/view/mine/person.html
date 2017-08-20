@@ -1,0 +1,121 @@
+<!DOCTYPE html>
+<html>
+
+	<head>
+		<style type="text/css">
+			.mui-bar .mui-icon span {
+				font-size: 16px;
+			}
+			
+			.mui-content .mui-table-view .head_image {
+				height: 100px;
+			}
+			
+			.mui-content .mui-table-view .head {
+				line-height: 100px;
+			}
+			
+			.mui-content .mui-table-view .mui-table-view-cell .mui-navigate-right .mui-badge img {
+				border-radius: 50%;
+				height: 60px;
+				width: 60px;
+				line-height: 100px;
+			}
+			
+			.mui-content .mui-table-view {
+				margin-top: 20px;
+			}
+			
+			.mui-content .mui-table-view .mui-table-view-cell {
+				font-size: 18px;
+			}
+			
+			.mui-content .mui-table-view .mui-table-view-cell .mui-navigate-right .sao {
+				float: right;
+				height: 30px;
+				width: 30px;
+				margin-right: 20px;
+			}
+			
+			.mui-content .mui-table-view .mui-table-view-cell .mui-navigate-right .mui-pull-right {
+				margin-right: 20px;
+				font-size: 16px;
+				font-family: '微软雅黑';
+			}
+			
+			.mui-content .mui-table-view .mui-table-view-cell .mui-badge {
+				background-color: white;
+				font-size: 16px;
+				font-family: '微软雅黑';
+			}
+			
+			.float {
+				float: right;
+				margin-right: 20px;
+			}
+			
+			.mui-ellipsis {
+				width: 50%;
+			}
+		</style>
+		<meta charset="utf-8">
+		<meta name="viewport" content="width=device-width,initial-scale=1,minimum-scale=1,maximum-scale=1,user-scalable=no" />
+		<title></title>
+		<script src="../../js/mui.min.js"></script>
+		<link href="../../css/mui.min.css" rel="stylesheet" />
+
+	</head>
+
+	<body>
+		<header class="mui-bar mui-bar-nav">
+			<span class="mui-icon mui-action-back mui-icon-arrowleft mui-icon-back mui-badge-primary mui-badge-inverted"><span>返回</span></span>
+			<h1 class="mui-title mui-badge-primary mui-badge-inverted">个人中心</h1>
+		</header>
+		<div class="mui-content">
+			<ul class="mui-table-view">
+				<li class="mui-table-view-cell head_image">
+					<a class="mui-navigate-right"><span class="head">头像</span>
+						<span class="mui-badge"><img src="../../images/Assets.xcassets/AppIcon.appiconset/logo_180.png"></span>
+					</a>
+				</li>
+				<li class="mui-table-view-cell">
+					<a class='mui-navigate-right'>名字
+						<span class="mui-pull-right">刘国奇</span>
+					</a>
+				</li>
+				<li class="mui-table-view-cell">
+					易沃克ID
+					<span class="mui-pull-right">123456</span>
+				</li>
+				<li class="mui-table-view-cell">
+					<a class='mui-navigate-right'>我的二维码
+						<img class="sao" src="../../images/Assets.xcassets/QRCode.imageset/QRCode@2x.png" />
+					</a>
+				</li>
+			</ul>
+
+			<ul class="mui-table-view">
+				<li class="mui-table-view-cell">
+					<a class='mui-navigate-right'>性别
+						<span class="mui-pull-right">男</span>
+					</a>
+				</li>
+				<li class="mui-table-view-cell">
+					<a class='mui-navigate-right'>生日
+						<span class="mui-pull-right">1978-06-06</span>
+					</a>
+				</li>
+				<li class="mui-table-view-cell">
+					<a class='mui-navigate-right'>
+						<span class="mui-pull-right mui-ellipsis">收到否文诶客收到方法二分法v法v而非 人和</span> 个性签名
+					</a>
+				</li>
+			</ul>
+		</div>
+	</body>
+	<script type="text/javascript" charset="utf-8">
+		mui.init();
+	 
+	</script>
+
+</html>

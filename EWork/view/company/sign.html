@@ -1,0 +1,140 @@
+<!DOCTYPE html>
+<html>
+
+	<head>
+		<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+		<meta name="viewport" content="initial-scale=1.0, user-scalable=no" />
+		<meta name="viewport" content="width=device-width,initial-scale=1,minimum-scale=1,maximum-scale=1,user-scalable=no" />
+		<link href="../../css/mui.min.css" rel="stylesheet" />
+		<script src="../../js/mui.min.js"></script>
+		<style type="text/css">
+			html,
+			body,
+			#allmap {
+				width: 100%;
+				height: 100%;
+				overflow: hidden;
+				font-family: "微软雅黑";
+			}
+			
+			#allmap {
+				height: 60%;
+			}
+			
+			.mui-icon span {
+				font-size: 18px;
+			}
+			
+			.mui-icon-location {
+				color: #007aff;
+				float: right;
+				margin-right: 5px;
+			}
+			
+			.date {
+				margin-top: 5px;
+				color: darkgrey;
+				font-size: 15px;
+				margin-left: 5px;
+			}
+		</style>
+		<script type="text/javascript" src="http://api.map.baidu.com/api?v=2.0&ak=kTXsdvEmz65B7bef2MAVKG2nx4wlA9It"></script>
+		<title>地图展示</title>
+	</head>
+
+	<body>
+		<header class="mui-bar mui-bar-nav">
+			<a class="mui-action-back mui-icon mui-icon-left-nav mui-pull-left"></a>
+			<h1 class="mui-title">签到打卡</h1> 
+		</header>
+
+		<div id="allmap"></div>
+		<ul id="table" class="mui-table-view">
+			 
+
+		</ul>
+	</body>
+
+</html>
+<script type="text/javascript">
+	mui.plusReady(function() {
+		getInfo();
+
+	})
+	var map = new BMap.Map("allmap");
+	var jingDu;
+	var weiDu;
+	var Address;
+	//初始化地图 默认加载北京天安门
+	var point = new BMap.Point(116.331398, 39.897445);
+	map.centerAndZoom(point, 16); //初始化地图，point为中心点，缩放级别为16
+	//判断手机浏览器是否支持定位
+	if(navigator.geolocation) {
+		var geolocation = new BMap.Geolocation(); //创建定位实例
+		geolocation.getCurrentPosition(showLocation, {
+			enableHighAccuracy: true
+		}); //enableHighAccuracy 要求浏览器获取最佳结果
+	} else {
+		map.addControl(new BMap.GeolocationControl()); //添加定位控件 支持定位
+	}
+	var gc = new BMap.Geocoder(); //将坐标转换成地址
+
+	//处理定位后的信息
+	function showLocation(r) {
+		if(this.getStatus() == BMAP_STATUS_SUCCESS) { //定位成功
+			//新建中心点 并将地图中心移动过去
+			jingdu = r.longitude;
+			weidu = r.latitude;
+			var centerPoint = new BMap.Point(r.longitude, r.latitude);
+			map.panTo(centerPoint);
+			map.setCenter(centerPoint);
+			gc.getLocation(centerPoint, function(rs) {
+				var addComp = rs.addressComponents;
+				var mapAddress = addComp.province + addComp.city + addComp.district +
+					addComp.street + addComp.streetNumber;
+				Address = mapAddress;
+
+			});
+			//新建标注
+			var mk = new BMap.Marker(centerPoint);
+			mk.disableDragging(); // 不可拖拽
+			map.addOverlay(mk);
+		} else {
+			mui.alert('failed' + this.getStatus()); //定位失败
+		}
+	}
+
+	var companyId = localStorage.getItem('companyId');
+	var phoneNum = localStorage.getItem('phoneNum');
+
+	function getInfo() {
+		mui.ajax('http://121.42.29.124/workoa/index.php?s=/Api/Qiandao/getqdforleader/', {
+			data: {
+				companyid: companyId,
+				userid: phoneNum,
+			},
+			type: 'post',
+			timeout: 10000,
+			success: function(data) {
+			//mui.alert(JSON.stringify(data));
+				mui.toast(data.msg);
+				var table = document.getElementById('table');
+				table.innerHTML = "";
+				if(data.flag == 200) {
+					var result = data.result;
+					for(var i = 0; i < result.length; i++) {
+						var li = document.createElement('li');
+						li.className = 'mui-table-view-cell';
+						li.innerHTML = '<div>' + result[i].address + '</div><div class="date">' + result[i].qiandaotime + '</div>';
+						table.appendChild(li);
+					}
+
+				}
+			},
+			error: function() {
+				mui.toast("申请签到信息失败");
+			},
+		});
+	}
+ 
+</script>
